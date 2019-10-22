@@ -1,0 +1,26 @@
+server:
+  port: 9003
+
+spring:
+#  thymeleaf:
+#    cache: false #关闭缓存及时刷新
+#    prefix: classpath:/templates/page/
+#    suffix: .html
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+    static-path-pattern: /assets/**
+  resources:
+    static-locations: /assets/
+
+#mq配置
+com:
+  mqtt:
+    host: tcp://192.168.84.128:1883
+    clientid: disvenk-emq1
+    topic: disvenk2,disvenk3
+    username: admin
+    password: public
+    timeout: 10
+    keepalive: 20
